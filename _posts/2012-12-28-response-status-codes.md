@@ -1,38 +1,25 @@
 ---
 title: 'Response status codes'
 
-layout: nil
+layout: 
 ---
 
 ### Success
 
-Successes differ from errors in that their body may not be a simple response object with a code and a message. The headers however are consistent across all calls:
+Os sucessos diferem dos erros, pois seu corpo pode não ser um objeto de resposta simples com um código e uma mensagem. Os cabeçalhos, no entanto, são consistentes em todas as chamadas:
 
-* `GET`, `PUT`, `DELETE` returns `200 OK` on success,
-* `POST ` returns 201 on success,
+* `GET`, `PUT`, `DELETE` retorna `200 OK` quando bem sucedidos,
+* `POST ` retorna 201 quando bem sucedido,
 
-When [retrieving stuff](#get-stuff) for example:
-
-```Status: 200 OK```
-```{
-    {
-        id: thing_1,
-        name: 'My first thing'
-    },
-    {
-        id: thing_2,
-        name: 'My second thing'
-    }
-}```
 
 ### Error
 
-Error responses are simply returning [standard HTTP error codes](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) along with some additional information:
+Error responses simplismente retornam [HTTP error codes](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) padrão, junto com algumas informações adicionais:
 
-* The error code is sent back as a status header,
-* The body includes an object describing both the code and message (for debugging and/or display purposes),
+* O código de erro é enviado de volta como um cabeçalho de status,
+* O corpo inclui um objeto que descreve o código e a mensagem (para fins de depuração e / ou exibição),
 
-For a call with an invalid authentication token for example:
+Por exemplo, para uma chamado com o token inválido....
 
 ```Status: 401 Access denied```
 ```{

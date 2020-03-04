@@ -1,20 +1,24 @@
 ---
-path: '/login'
-title: 'Authenticate'
+route: '/access-token'
+title: 'Autenticação'
 
-layout: nil
+layout: 
 ---
 
-This method allows users to retrieve stuff.
+Para acessar as informações basta solicitar um código de acesso para a equipe Profit+
 
 ### Response
 
 Sends back a collection of things.
 
-```Authentication: bearer TOKEN```
+```Status 401```
 ```{
-    id: thing_2,
-    name: 'My second thing'
+  "error": {
+    "statusCode": 401,
+    "name": "Error",
+    "message": "Autorização Necessária",
+    "code": "AUTHORIZATION_REQUIRED",
+    "stack": "Error: Autorização Necessária...
 }```
 
-For errors responses, see the [response status codes documentation](#response-status-codes).
+Caso ocorram erros, acesse [lista de codigos de response status](#response-status-codes).
